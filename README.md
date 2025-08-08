@@ -7,7 +7,7 @@ https://community.fortinet.com/t5/FortiGate/Troubleshooting-Tip-Fix-FortiSwitch-
 
 
 
-#AUTHOR
+#AUTHOR   
 Created by: Marlene Marcía Bernal
 GitHub: @mmarciab007
 Email address: mmarciab07@gmail.com
