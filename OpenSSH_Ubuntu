@@ -1,0 +1,7 @@
+1. Abrir Terminal en Ubuntu:
+2. Copiar comando: sudo nano /etc/ssh/ssh_config
+3. Al final del archivo, copiar los siguientes comandos: 
+    KexAlgorithms +diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+    HostKeyAlgorithms +ssh-rsa
+4. Luego, Control+O -> Enter -> Control+X
+5. Intente conectar a la IP que desee via ssh. 
