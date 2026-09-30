@@ -1,5 +1,5 @@
 # TroubleshootCommandsGeneral
-This repository is for troubleshooting commands for Cisco, Fortinet, etc.
+This repository is for troubleshooting commands for Cisco, Fortinet, Ubuntu, etc.
 
 # FOR REPOSITORY "FortiSwitchShowingOffline":
 Please make sure to follow the below link before running command on repository. 
