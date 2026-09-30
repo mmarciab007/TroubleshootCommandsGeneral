@@ -1,0 +1,30 @@
+1. Abrir Terminal y escribe: lsblk o df -h
+2. Debe de aparecer algo parecido a esto:
+NAME        SIZE TYPE MOUNTPOINT
+sda          100G disk
+├─sda1        1G part /boot
+└─sda2       39G part
+  └─ubuntu--vg-ubuntu--lv 39G lvm /
+
+3. En VMware Workstation:
+VM → Settings → Hard Disk (SCSI) → Expand
+4. Poner el espacio que se requiera necesario. 
+5. Comprueba que Ubuntu vea el espacio que le has asignado con: lsblk
+6. Se debe de ver algo como esto. Es normal porque, no se ha ampliado la partición.
+sda       80G
+├─sda1     1M
+└─sda2    20G
+7. Necesitamos instalar las herramientas correspondientes:
+sudo apt update
+sudo apt install cloud-guest-utils -y
+
+8. Luego, expandir el /dev/sda: sudo growpart /dev/sda 2
+Debe de aparecer un mensaje que /dev/sda2 fue expandida. Algo como esto: 
+CHANGED: partition=2 start=4096 old: size=41936896 end=41940991 new: size=83881951 end=83886046
+
+9. Ejecutamos el comando para expandir el fylesystem ext4: sudo resize2fs /dev/sda2
+10. Finalmente: df -ha
+Debe de pasar de esto: 
+/dev/sda2    20G    18G    817M    96% /
+A esto: 
+/dev/sda2    80G    18G     58G    24% /
